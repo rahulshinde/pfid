@@ -177,6 +177,18 @@ html {
       width: 100%;
       height: 4rem;
       background-image: linear-gradient(rgba(255, 255, 255, 0), #fff); }
+    #site #thank_you_container img {
+      margin: 1.5rem 2rem 0 2rem;
+      display: inline-block;
+      vertical-align: middle; }
+  #site img#artsns {
+    width: 7%; }
+  #site img#ccfa {
+    width: 20%; }
+  #site img#cfat {
+    width: 4%; }
+  #site img#halifax {
+    width: 10%; }
 
 #site #camila .section_heading:before {
   background-color: #ffe69e; }
