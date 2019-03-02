@@ -88,14 +88,14 @@ html {
     z-index: 100;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    opacity: 0;
     pointer-events: none;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     transition: opacity ease 0.5s;
     background-color: rgba(0, 0, 0, 0.6);
-    overflow-y: auto; }
+    overflow-y: auto;
+    opacity: 0; }
   #site.open {
     overflow-y: hidden; }
     #site.open #zoom_image_container {
