@@ -21,7 +21,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: middle; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -57,8 +57,7 @@ html {
   #site a:link,
   #site a:visited {
     color: inherit;
-    /*text-decoration: none;*/
-    font-style: italic; }
+    /*text-decoration: none;*/ }
   #site a:hover {
     text-decoration: none; }
   #site video {
@@ -73,6 +72,37 @@ html {
     display: block;
     transform: scale(-1, 1);
     -webkit-transform: scale(-1, 1); }
+  #site #zoom_image_container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-top: 10vh solid transparent;
+    border-bottom: 10vh solid transparent;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity ease 0.5s;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: auto; }
+  #site.open {
+    overflow-y: hidden; }
+    #site.open #zoom_image_container {
+      opacity: 1;
+      pointer-events: auto; }
+      #site.open #zoom_image_container:hover {
+        cursor: zoom-out; }
 
 #site {
   margin-top: 1.6rem;
@@ -110,12 +140,12 @@ html {
       -webkit-filter: blur(10px); }
     #site .title h1 {
       display: inline-block;
-      vertical-align: top;
+      /*vertical-align: top;*/
       text-transform: uppercase;
       width: 20%; }
     #site .title h2 {
       display: inline-block;
-      vertical-align: top;
+      /*vertical-align: top;*/
       margin-right: 0.5rem; }
   #site #navigation_container {
     position: relative; }
@@ -230,11 +260,12 @@ html {
 #site .currently {
   display: block; }
 #site .artist_section {
-  padding-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   box-sizing: border-box;
   width: 35%; }
   #site .artist_section#camila {
@@ -394,7 +425,7 @@ html {
   transition: box-shadow ease 0.4s;
   -webkit-transition: box-shadow ease 0.4s; }
   #site .zoom_image:hover {
-    cursor: pointer;
+    cursor: zoom-in;
     box-shadow: 0 0 0.75rem; }
 
 #site .section_links {
