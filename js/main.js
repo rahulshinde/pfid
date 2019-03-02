@@ -18,7 +18,11 @@ smoothScroll = function(e){
   e.preventDefault();
   var font_size = parseInt($('html').css('font-size'));
   var target = $(this).attr('href');
-  var scroll_to = $(target).offset().top + (font_size * 4);
+  if ($(this)[0].classList.contains('internal')){
+    var scroll_to = $(target).offset().top - (font_size * 5);
+  }else{
+    var scroll_to = $(target).offset().top + (font_size * 4);
+  }
   $("html, body").animate(
     { scrollTop: scroll_to + "px" }, 500
   );
