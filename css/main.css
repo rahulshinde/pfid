@@ -195,6 +195,19 @@ html {
       text-align: right;
       background-color: #000;
       color: #fff; }
+  #site #curators,
+  #site #site_credits {
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    text-align: center; }
+  #site #curators {
+    top: 8rem; }
+  #site #site_credits {
+    top: calc(73%);
+    font-size: 0.65rem; }
   #site #thank_you_container {
     background-color: #fff;
     padding: 2rem 1rem 3rem 1rem;
