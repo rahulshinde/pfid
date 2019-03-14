@@ -24,8 +24,7 @@ smoothScroll = function(e){
   }else{
     var scroll_to = $(target).offset().top + (font_size * 4);
   }
-  console.log(scroll_to);
-  $("#yield_container").animate(
+  $("html, body").animate(
     { scrollTop: scroll_to + "px" }, 500
   );
 }
