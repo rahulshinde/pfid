@@ -12,6 +12,7 @@ $(document).ready(function(){
   $('.smooth_nav').on('click', smoothScroll);
   $('.zoom_image').on('click', openZoomImage)
   $('#zoom_image_container').on('click', closeZoomImage);
+  $('.transition_button').on('click', transitionTabletSection);
 })
 
 smoothScroll = function(e){
@@ -23,7 +24,8 @@ smoothScroll = function(e){
   }else{
     var scroll_to = $(target).offset().top + (font_size * 4);
   }
-  $("html, body").animate(
+  console.log(scroll_to);
+  $("#yield_container").animate(
     { scrollTop: scroll_to + "px" }, 500
   );
 }
@@ -36,4 +38,8 @@ openZoomImage = function(e){
 
 closeZoomImage = function(e){
   $('#site').removeClass('open');
+}
+
+transitionTabletSection = function(e){
+  $(this).closest('.artists_wrapper').toggleClass('slide_over');
 }
