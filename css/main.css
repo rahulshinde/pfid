@@ -271,12 +271,13 @@ html {
   #site .title {
     text-align: center; }
     #site .title:before {
-      background-color: #fff;
+      background-color: #000;
       background-image: none; }
     #site .title h1 {
       display: inline-block;
       /*vertical-align: top;*/
       text-transform: uppercase;
+      color: #fff;
       width: 100%; }
   #site #language_links {
     display: none; }
@@ -294,7 +295,7 @@ html {
   #site .navigation_section {
     width: 100%;
     margin-left: 0 !important;
-    background-color: transparent !important; }
+    background-color: rgba(0, 0, 0, 0) !important; }
   #site #bio_container {
     background-image: none;
     padding-bottom: 2rem; } }
@@ -577,6 +578,10 @@ html {
     background-image: linear-gradient(#ffe69e 35%, #3c7453 65%); }
     #site #camila_arielle_wrapper .process_section {
       background-image: linear-gradient(#ffe69e 35%, #3c7453 65%); }
+  #site #camille_madeleine_wrapper {
+    background-image: linear-gradient(#d3ceff 35%, #102467 65%); }
+    #site #camille_madeleine_wrapper .process_section {
+      background-image: linear-gradient(#d3ceff 35%, #102467 65%); }
   #site .section_heading:before {
     display: none; }
   #site .process_section {
@@ -584,14 +589,24 @@ html {
     left: calc(100% - 2px);
     top: 0;
     height: 100%;
-    width: 100%; }
+    width: calc(100% + 2px); }
   #site .process_section_heading {
     display: none; }
   #site .process_sub_sections_wrapper {
     opacity: 1; }
   #site.slide_over .artists_wrapper {
     transform: translateX(-100%);
-    -webkit-transform: translateX(-100%); } }
+    -webkit-transform: translateX(-100%); }
+  #site #camille_madeleine_after_container,
+  #site #camila_arielle_after_container {
+    width: 200%; }
+    #site #camille_madeleine_after_container:after,
+    #site #camila_arielle_after_container:after {
+      background-image: none; }
+  #site #camila_arielle_after_container:after {
+    background-color: #3c7453; }
+  #site #camille_madeleine_after_container:after {
+    background-color: #102467; } }
 #site .section_links {
   position: absolute;
   top: 1rem;
@@ -671,12 +686,28 @@ html {
     pointer-events: none; }
   #site.in_content .transition_button.white {
     opacity: 1;
-    pointer-events: auto; } }
+    pointer-events: auto; }
+  #site footer {
+    top: 0;
+    bottom: auto; }
+    #site footer #language {
+      margin-top: 0.8rem; }
+    #site footer .transition_button {
+      top: 0.8rem; }
+    #site footer:after {
+      top: -2rem;
+      bottom: auto; }
+  #site .title {
+    bottom: 0;
+    top: auto; }
+    #site .title:before {
+      top: auto;
+      bottom: -2rem; } }
 @media (max-width: 767px) {
   #site footer:after {
-    background-color: #000;
+    background-color: #fff;
     background-image: none; }
-  #site #language .en {
-    color: #fff; } }
+  #site #language .fr {
+    color: #000; } }
 
 /*# sourceMappingURL=main.css.map */
