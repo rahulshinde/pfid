@@ -710,14 +710,16 @@ html {
   #site footer:after {
     background-color: #fff;
     background-image: none; }
-  #site .transition_button.white {
-    display: none; }
-  #site .transition_button.black_mobile {
-    right: 1rem;
-    display: block;
-    opacity: 0;
-    pointer-events: auto;
-    transform: rotate(180deg); }
+  #site footer .transition_button {
+    top: 0.55rem; }
+    #site footer .transition_button.white {
+      display: none; }
+    #site footer .transition_button.black_mobile {
+      right: 1rem;
+      display: block;
+      opacity: 0;
+      pointer-events: auto;
+      transform: rotate(180deg); }
   #site.in_content.slide_over .transition_button.black {
     opacity: 1;
     pointer-events: auto; }
