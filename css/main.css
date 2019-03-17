@@ -261,10 +261,27 @@ html {
     width: 4%; }
   #site img#halifax {
     width: 10%; }
+  #site #footer_quote {
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    margin-left: 35%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    font-size: 1.8rem;
+    line-height: 1.1em;
+    text-align: center; }
+    #site #footer_quote em {
+      font-style: italic; }
 
 @media (max-width: 1050px) {
   #site #thank_you_container p {
-    padding: 0 10%; } }
+    padding: 0 10%; }
+  #site .curatorial_statement {
+    padding-top: 2rem; }
+  #site .curatorial_statement,
+  #site #footer_quote {
+    font-size: 1.5rem; } }
 @media (max-width: 767px) {
   #site .curatorial_statement {
     padding-top: 1.5rem; }
@@ -291,8 +308,24 @@ html {
   #site #statement_after_container:after {
     background-image: none;
     background-color: #000; }
+  #site #curators {
+    margin-top: 3rem; }
   #site #curators,
-  #site #site_credits {
+  #site #site_credits,
+  #site #footer_quote {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 1rem;
+    box-sizing: border-box; }
+    #site #curators .white,
+    #site #site_credits .white,
+    #site #footer_quote .white {
+      display: none; }
+  #site #thank_you_container {
+    padding-top: 0; }
+  #site #thank_you_container:before {
     display: none; }
   #site .navigation_section {
     width: 100%;
@@ -301,6 +334,18 @@ html {
   #site #bio_container {
     background-image: none;
     padding-bottom: 2rem; } }
+@media (max-width: 630px) {
+  #site #thank_you_container img {
+    margin: 2rem auto;
+    display: block; }
+  #site img#artsns {
+    width: 17%; }
+  #site img#ccfa {
+    width: 40%; }
+  #site img#cfat {
+    width: 14%; }
+  #site img#halifax {
+    width: 20%; } }
 #site #camila .section_heading:before {
   background-color: #ffe69e; }
 #site #arielle .section_heading:before {
