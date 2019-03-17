@@ -266,6 +266,8 @@ html {
   #site #thank_you_container p {
     padding: 0 10%; } }
 @media (max-width: 767px) {
+  #site .curatorial_statement {
+    padding-top: 1.5rem; }
   #site .section_links {
     display: none; }
   #site .title {
@@ -711,7 +713,8 @@ html {
     background-color: #fff;
     background-image: none; }
   #site footer .transition_button {
-    top: 0.55rem; }
+    top: 0.55rem;
+    opacity: 0; }
     #site footer .transition_button.white {
       display: none; }
     #site footer .transition_button.black_mobile {
