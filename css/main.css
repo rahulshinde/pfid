@@ -118,7 +118,7 @@ html {
   margin-top: 1.6rem;
   width: 100%; }
   #site .curatorial_statement {
-    padding: 4rem 1rem 0.2rem 1rem;
+    padding: 2rem 1rem 0.2rem 1rem;
     text-align: justify;
     text-align-last: center;
     background-image: linear-gradient(to right, #fff 35%, #000 65%);
@@ -335,6 +335,8 @@ html {
     background-image: none;
     padding-bottom: 2rem; } }
 @media (max-width: 630px) {
+  #site #thank_you_container p {
+    padding: 0; }
   #site #thank_you_container img {
     margin: 2rem auto;
     display: block; }
@@ -428,7 +430,8 @@ html {
   /*display: none;*/
   transition: opacity ease 0.4s;
   -webkit-transition: opacity ease 0.4s;
-  opacity: 0.15; }
+  opacity: 0.15;
+  pointer-events: none; }
 #site .artists_wrapper {
   position: relative; }
 #site #camila_arielle_wrapper {
@@ -523,7 +526,8 @@ html {
   #site .open #process_toggle .text_wrap:before {
     content: "Hide "; }
 #site .open .process_sub_sections_wrapper {
-  opacity: 1; }
+  opacity: 1;
+  pointer-events: auto; }
 #site #process_toggle:hover {
   cursor: pointer; }
   #site #process_toggle:hover .text_wrap {
@@ -551,16 +555,16 @@ html {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 2rem;
-  width: 50%;
+  width: calc(50% - 1.5rem);
   box-sizing: border-box; }
   #site .process_media_container img:nth-child(odd),
   #site .process_media_container video:nth-child(odd) {
-    padding-left: 1rem;
-    padding-right: 0.5rem; }
+    margin-left: 1rem;
+    margin-right: 0.5rem; }
   #site .process_media_container img:nth-child(even),
   #site .process_media_container video:nth-child(even) {
-    padding-right: 1rem;
-    padding-left: 0.5rem; }
+    margin-right: 1rem;
+    margin-left: 0.5rem; }
 #site .process_sub_section {
   position: relative;
   margin-bottom: 2rem; }
@@ -640,7 +644,8 @@ html {
   #site .process_section_heading {
     display: none; }
   #site .process_sub_sections_wrapper {
-    opacity: 1; }
+    opacity: 1;
+    pointer-events: auto; }
   #site.slide_over .artists_wrapper {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%); }
@@ -653,7 +658,24 @@ html {
   #site #camila_arielle_after_container:after {
     background-color: #3c7453; }
   #site #camille_madeleine_after_container:after {
-    background-color: #102467; } }
+    background-color: #102467; }
+  #site .process_sub_section.black_mobile .white {
+    display: none; }
+  #site .process_sub_section.white_mobile .black {
+    display: none; }
+  #site .process_sub_section.white_mobile .white {
+    position: static;
+    transform: none; }
+    #site .process_sub_section.white_mobile .white .text_wrap {
+      transform: none;
+      -webkit-transform: none; }
+  #site .process_media_container {
+    margin-bottom: 3rem; }
+  #site .process_sub_section {
+    margin-bottom: 5rem; }
+  #site .process_section {
+    padding-top: 7.5rem;
+    font-size: 1rem; } }
 #site .section_links {
   position: absolute;
   top: 1rem;
