@@ -4,6 +4,9 @@ $(document).ready(function(){
   Site.body = $('body');
   Site.window_height = $(window).height();
   Site.window_width = $(window).width();
+  Site.intro_height = $('#navigation_container').outerHeight();
+  Site.content_height = $('#camila_arielle_wrapper').outerHeight() + $('#camille_madeleine_wrapper').outerHeight();
+  Site.in_artist_section = false;
 
   $('.process_section_heading').on('click', function(){
     $(this).parent().toggleClass('open');
@@ -13,6 +16,11 @@ $(document).ready(function(){
   $('.zoom_image').on('click', openZoomImage)
   $('#zoom_image_container').on('click', closeZoomImage);
   $('.transition_button').on('click', transitionTabletSection);
+
+  scrollHandler();
+
+  $(window).on('scroll', scrollHandler);
+  $(window).on('resize', resizeHandler);
 })
 
 smoothScroll = function(e){
@@ -29,6 +37,32 @@ smoothScroll = function(e){
   );
 }
 
+resizeHandler = function (e){
+  Site.window_height = $(window).height();
+  Site.window_width = $(window).width();
+  Site.intro_height = $('#navigation_container').outerHeight();
+  Site.content_height = $('#camila_arielle_wrapper').outerHeight() + $('#camille_madeleine_wrapper').outerHeight();
+}
+
+scrollHandler = function(e){
+  Site.scroll_top = $(document).scrollTop() + Site.window_height;
+  
+  console.log(Site.scroll_top);
+  console.log(Site.intro_height);
+  console.log(Site.content_height);
+  console.log(Site.intro_height + Site.content_height + Site.window_height * 0.6);
+  console.log('------------------');
+
+
+  if(!Site.in_artist_section && (Site.scroll_top > Site.intro_height && Site.scroll_top < Site.intro_height + Site.content_height + Site.window_height * 0.6)){
+    $('#site').addClass('in_content');
+    Site.in_artist_section = true;
+  } else if (Site.in_artist_section && (Site.scroll_top <= Site.intro_height || Site.scroll_top >= Site.intro_height + Site.content_height + Site.window_height * 0.6)){
+    $('#site').removeClass('in_content');
+    Site.in_artist_section = false;
+  }
+}
+
 openZoomImage = function(e){
   console.log($(this)[0]);
   $('#zoom_image_container').css('background-image', 'url(' + $(this).attr('data-large') + ')');
@@ -40,5 +74,5 @@ closeZoomImage = function(e){
 }
 
 transitionTabletSection = function(e){
-  $(this).closest('.artists_wrapper').toggleClass('slide_over');
+  $('#site').toggleClass('slide_over');
 }

@@ -47,15 +47,19 @@ table {
   border-spacing: 0; }
 
 html {
-  font-size: 18px; }
+  font-size: 18px;
+  /*overflow-x: hidden;*/ }
 
 #site {
   font-family: sans-serif;
   font-weight: bold;
-  line-height: 1.1em; }
+  line-height: 1.1em;
+  /*overflow-x: hidden;*/ }
   #site #yield_container {
     max-width: 100vw;
-    overflow-x: hidden; }
+    /*overflow-x: hidden;*/ }
+  #site #yield_inner_wrapper {
+    position: relative; }
   #site a:link,
   #site a:visited {
     color: inherit;
@@ -98,13 +102,11 @@ html {
     background-color: rgba(0, 0, 0, 0.6);
     overflow-y: auto;
     opacity: 0; }
-  #site.open {
-    overflow-y: hidden; }
-    #site.open #zoom_image_container {
-      opacity: 1;
-      pointer-events: auto; }
-      #site.open #zoom_image_container:hover {
-        cursor: zoom-out; }
+  #site.open #zoom_image_container {
+    opacity: 1;
+    pointer-events: auto; }
+    #site.open #zoom_image_container:hover {
+      cursor: zoom-out; }
 
 @media (max-width: 1000px) {
   html {
@@ -114,8 +116,7 @@ html {
     font-size: 16px; } }
 #site {
   margin-top: 1.6rem;
-  width: 100%;
-  overflow-x: hidden; }
+  width: 100%; }
   #site .curatorial_statement {
     padding: 4rem 1rem 0.2rem 1rem;
     text-align: justify;
@@ -159,14 +160,23 @@ html {
       margin-right: 0.5rem; }
   #site #navigation_container {
     position: relative;
-    z-index: 3; }
-    #site #navigation_container:after {
+    z-index: 3;
+    margin-bottom: -6rem; }
+  #site #statement_after_container {
+    position: relative;
+    overflow-x: hidden;
+    height: 6rem;
+    width: 100%;
+    z-index: 11;
+    top: -1.5rem; }
+    #site #statement_after_container:after {
       content: '';
-      bottom: -2.5rem;
+      top: 0;
       left: -1rem;
       right: -1rem;
       height: 4rem;
       background-image: linear-gradient(to right, #fff 35%, #000 65%);
+      background-color: transparent;
       position: absolute;
       z-index: 11;
       filter: blur(10px);
@@ -223,7 +233,7 @@ html {
       margin-bottom: 0; }
   #site #thank_you_container {
     background-color: #fff;
-    padding: 2rem 1rem 3rem 1rem;
+    padding: 2rem 1rem 6rem 1rem;
     box-sizing: border-box;
     position: relative;
     text-align: center; }
@@ -252,6 +262,42 @@ html {
   #site img#halifax {
     width: 10%; }
 
+@media (max-width: 1050px) {
+  #site #thank_you_container p {
+    padding: 0 10%; } }
+@media (max-width: 767px) {
+  #site .section_links {
+    display: none; }
+  #site .title {
+    text-align: center; }
+    #site .title:before {
+      background-color: #fff;
+      background-image: none; }
+    #site .title h1 {
+      display: inline-block;
+      /*vertical-align: top;*/
+      text-transform: uppercase;
+      width: 100%; }
+  #site #language_links {
+    display: none; }
+  #site .curatorial_statement {
+    background-image: linear-gradient(#fff 35%, #000 65%); }
+  #site .bios {
+    padding-bottom: 4rem;
+    background-image: linear-gradient(#fff 35%, #000 65% 95%, #fff); }
+  #site #statement_after_container:after {
+    background-image: none;
+    background-color: #000; }
+  #site #curators,
+  #site #site_credits {
+    display: none; }
+  #site .navigation_section {
+    width: 100%;
+    margin-left: 0 !important;
+    background-color: transparent !important; }
+  #site #bio_container {
+    background-image: none;
+    padding-bottom: 2rem; } }
 #site #camila .section_heading:before {
   background-color: #ffe69e; }
 #site #arielle .section_heading:before {
@@ -314,7 +360,7 @@ html {
   padding-left: 1rem;
   padding-right: 1rem;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   box-sizing: border-box;
   width: 35%; }
   #site .artist_section#camila {
@@ -336,14 +382,25 @@ html {
   -webkit-transition: opacity ease 0.4s;
   opacity: 0.15; }
 #site .artists_wrapper {
-  position: relative;
-  display: flex; }
+  position: relative; }
 #site #camila_arielle_wrapper {
   background-image: linear-gradient(to right, #ffe69e 35%, #3c7453 65%);
-  z-index: 2; }
-  #site #camila_arielle_wrapper:after {
+  z-index: 2;
+  /*margin-bottom: -6rem;*/ }
+  #site #camila_arielle_wrapper .process_section {
+    display: inline-block; }
+    #site #camila_arielle_wrapper .process_section .section_heading:after {
+      background-image: linear-gradient(to right, #ffe69e, #3c7453); }
+#site #camila_arielle_after_container {
+  position: relative;
+  overflow-x: hidden;
+  height: 6rem;
+  width: 100%;
+  z-index: 11;
+  top: 3.5rem; }
+  #site #camila_arielle_after_container:after {
     content: '';
-    bottom: -2.5rem;
+    top: 0;
     left: -1rem;
     right: -1rem;
     height: 4rem;
@@ -352,16 +409,23 @@ html {
     z-index: 11;
     filter: blur(10px);
     -webkit-filter: blur(10px); }
-  #site #camila_arielle_wrapper .process_section {
-    display: inline-block; }
-    #site #camila_arielle_wrapper .process_section .section_heading:after {
-      background-image: linear-gradient(to right, #ffe69e, #3c7453); }
 #site #camille_madeleine_wrapper {
   z-index: 1;
   background-image: linear-gradient(to right, #d3ceff 35%, #102467 65%); }
-  #site #camille_madeleine_wrapper:after {
+  #site #camille_madeleine_wrapper .process_section {
+    display: inline-block; }
+    #site #camille_madeleine_wrapper .process_section .section_heading:after {
+      background-image: linear-gradient(to right, #d3ceff, #102467); }
+#site #camille_madeleine_after_container {
+  position: relative;
+  overflow-x: hidden;
+  height: 6rem;
+  width: 100%;
+  z-index: 11;
+  top: 3.5rem; }
+  #site #camille_madeleine_after_container:after {
     content: '';
-    bottom: -2.5rem;
+    top: 0;
     left: -1rem;
     right: -1rem;
     height: 4rem;
@@ -370,10 +434,6 @@ html {
     z-index: 11;
     filter: blur(10px);
     -webkit-filter: blur(10px); }
-  #site #camille_madeleine_wrapper .process_section {
-    display: inline-block; }
-    #site #camille_madeleine_wrapper .process_section .section_heading:after {
-      background-image: linear-gradient(to right, #d3ceff, #102467); }
 #site .process_section {
   font-size: 0.65rem;
   text-align: center;
@@ -480,45 +540,58 @@ html {
   display: none; }
 
 @media (max-width: 1050px) {
+  #site #yield_inner_wrapper {
+    width: 100%;
+    overflow-x: hidden; }
   #site .artists_wrapper {
     width: 140%;
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
     transition: transform ease 0.5s;
     -webkit-transition: transform ease 0.5s; }
-  #site .artists_wrapper.slide_over {
+  #site.slide_over .artists_wrapper {
     transform: translateX(-28.57%);
-    -webkit-transform: translateX(-28.57%); }
-    #site .artists_wrapper.slide_over .left .transition_button {
-      opacity: 1; }
-    #site .artists_wrapper.slide_over .right .transition_button {
-      opacity: 0; }
-  #site .transition_button {
-    display: block;
+    -webkit-transform: translateX(-28.57%); } }
+@media (max-width: 767px) {
+  #site .black,
+  #site .white {
+    width: 100%;
+    overflow-y: hidden; }
+  #site .white {
+    color: white;
     position: absolute;
-    top: 3.8rem;
-    width: 2rem;
-    transition: opacity ease 0.5s;
-    -webkit-transition: opacity ease 0.5s; }
-    #site .transition_button:hover {
-      cursor: pointer;
-      border-bottom: 2px solid transparent; }
-  #site .right .transition_button {
-    left: 1.35rem;
+    top: 50%;
+    height: 50%;
+    right: 0; }
+    #site .white .text_wrap {
+      transform: translateY(-100%);
+      -webkit-transform: translateY(-100%); }
+  #site .text_wrap {
+    width: 100%;
+    height: 100%; }
+  #site .artists_wrapper {
+    width: 100%; }
+  #site .artist_section {
+    width: 100%; }
+  #site #camila_arielle_wrapper {
+    background-image: linear-gradient(#ffe69e 35%, #3c7453 65%); }
+    #site #camila_arielle_wrapper .process_section {
+      background-image: linear-gradient(#ffe69e 35%, #3c7453 65%); }
+  #site .section_heading:before {
+    display: none; }
+  #site .process_section {
+    position: absolute;
+    left: calc(100% - 2px);
+    top: 0;
+    height: 100%;
+    width: 100%; }
+  #site .process_section_heading {
+    display: none; }
+  #site .process_sub_sections_wrapper {
     opacity: 1; }
-  #site .left .transition_button {
-    right: 1.35rem;
-    opacity: 0; } }
-@media (max-width: 900px) {
-  #site .right .transition_button {
-    left: 1.1rem; }
-  #site .left .transition_button {
-    right: 1.1rem; } }
-@media (max-width: 800px) {
-  #site .right .transition_button {
-    left: 0.45rem; }
-  #site .left .transition_button {
-    right: 0.45rem; } }
+  #site.slide_over .artists_wrapper {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%); } }
 #site .section_links {
   position: absolute;
   top: 1rem;
@@ -534,10 +607,76 @@ html {
     position: static; }
     #site .section_links a.link_white {
       color: #fff; }
+#site footer {
+  position: fixed;
+  bottom: -0.5rem;
+  height: 6rem;
+  font-size: 1rem;
+  z-index: 12;
+  width: 100%;
+  overflow-x: hidden;
+  /*background-image: linear-gradient(transparent, #fff);*/ }
+  #site footer:after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    right: -1rem;
+    height: 5rem;
+    bottom: -1.5rem;
+    background-image: linear-gradient(to right, #fff 35%, #000 65%);
+    z-index: -1;
+    filter: blur(10px); }
+#site #language {
+  text-align: center;
+  color: #fff;
+  margin-top: 3.8rem; }
+  #site #language h2,
+  #site #language a {
+    display: inline-block;
+    margin: 0 1rem; }
+  #site #language .en {
+    color: #000; }
 #site #language_links {
   position: absolute;
   right: 1rem;
   top: 1rem;
   color: #fff; }
+
+@media (max-width: 1050px) {
+  #site .transition_button {
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+    width: 1.5rem;
+    transition: opacity ease 0.5s;
+    -webkit-transition: opacity ease 0.5s; }
+    #site .transition_button.black {
+      left: 1rem;
+      opacity: 0;
+      pointer-events: none; }
+    #site .transition_button.white {
+      right: 1rem;
+      opacity: 0;
+      pointer-events: none; }
+  #site.in_content.slide_over .transition_button.black {
+    opacity: 1;
+    pointer-events: auto; }
+  #site.in_content.slide_over .transition_button.white {
+    opacity: 0;
+    pointer-events: none; }
+  #site.in_content .transition_button:hover {
+    cursor: pointer; }
+  #site.in_content .transition_button.black {
+    opacity: 0;
+    pointer-events: none; }
+  #site.in_content .transition_button.white {
+    opacity: 1;
+    pointer-events: auto; } }
+@media (max-width: 767px) {
+  #site footer:after {
+    background-color: #000;
+    background-image: none; }
+  #site #language .en {
+    color: #fff; } }
 
 /*# sourceMappingURL=main.css.map */
