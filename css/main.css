@@ -285,7 +285,7 @@ html {
     background-image: linear-gradient(#fff 35%, #000 65%); }
   #site .bios {
     padding-bottom: 4rem;
-    background-image: linear-gradient(#fff 35%, #000 65% 95%, #fff); }
+    background-image: linear-gradient(#fff 35%, #000 65%, #fff 100%); }
   #site #statement_after_container:after {
     background-image: none;
     background-color: #000; }
