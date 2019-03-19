@@ -17,11 +17,26 @@ $(document).ready(function(){
   $('#zoom_image_container').on('click', closeZoomImage);
   $('.transition_button').on('click', transitionTabletSection);
 
+  $('.view_more_toggle').on('click', toggleStatement);
+
   scrollHandler();
 
   $(window).on('scroll', scrollHandler);
   $(window).on('resize', resizeHandler);
 })
+
+toggleStatement = function(){
+  $(this).toggleClass('open');
+  $('.view_more_container').slideToggle(1000);
+  if (!$(this).hasClass('open')){
+    $("html, body").animate({ scrollTop: "0" }, 1000);
+  }
+
+  setTimeout(function(){
+    resizeHandler();
+    scrollHandler();
+  }, 1000);
+}
 
 smoothScroll = function(e){
   e.preventDefault();
@@ -46,12 +61,6 @@ resizeHandler = function (e){
 
 scrollHandler = function(e){
   Site.scroll_top = $(document).scrollTop() + Site.window_height;
-  
-  console.log(Site.scroll_top);
-  console.log(Site.intro_height);
-  console.log(Site.content_height);
-  console.log(Site.intro_height + Site.content_height + Site.window_height * 0.6);
-  console.log('------------------');
 
 
   if(!Site.in_artist_section && (Site.scroll_top > Site.intro_height && Site.scroll_top < Site.intro_height + Site.content_height + Site.window_height * 0.6)){

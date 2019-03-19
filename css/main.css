@@ -118,7 +118,7 @@ html {
   margin-top: 1.6rem;
   width: 100%; }
   #site .curatorial_statement {
-    padding: 2rem 1rem 0.2rem 1rem;
+    padding: 4rem 1rem 0.2rem 1rem;
     text-align: justify;
     text-align-last: center;
     background-image: linear-gradient(to right, #fff 35%, #000 65%);
@@ -126,6 +126,23 @@ html {
     line-height: 1.2em; }
     #site .curatorial_statement em {
       font-style: italic; }
+  #site .process_sub_section.view_more_toggle {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    display: inline-block; }
+    #site .process_sub_section.view_more_toggle .text_wrap {
+      font-size: 0.65rem;
+      text-decoration: underline; }
+      #site .process_sub_section.view_more_toggle .text_wrap:after {
+        content: 'View More'; }
+    #site .process_sub_section.view_more_toggle:hover {
+      cursor: pointer; }
+      #site .process_sub_section.view_more_toggle:hover .text_wrap {
+        text-decoration: none; }
+  #site .process_sub_section.view_more_toggle.open .text_wrap:after {
+    content: 'View Less'; }
+  #site .view_more_container {
+    display: none; }
   #site .title {
     position: fixed;
     z-index: 20;
@@ -285,6 +302,11 @@ html {
 @media (max-width: 767px) {
   #site .curatorial_statement {
     padding-top: 1.5rem; }
+    #site .curatorial_statement .process_sub_section {
+      margin-bottom: 0; }
+    #site .curatorial_statement .view_more_toggle.process_sub_section {
+      margin-top: 0.5rem;
+      margin-bottom: 0.9rem; }
   #site .section_links {
     display: none; }
   #site .title {
