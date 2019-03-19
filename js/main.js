@@ -27,15 +27,21 @@ $(document).ready(function(){
 
 toggleStatement = function(){
   $(this).toggleClass('open');
-  $('.view_more_container').slideToggle(1000);
+  if (window.width >= 768){
+    var time = 1000;
+  } else {
+    var time = 1500;
+  }
+  $('.view_more_container').slideToggle(time);
+
   if (!$(this).hasClass('open')){
-    $("html, body").animate({ scrollTop: "0" }, 1000);
+    $("html, body").animate({ scrollTop: "0" }, time);
   }
 
   setTimeout(function(){
     resizeHandler();
     scrollHandler();
-  }, 1000);
+  }, time);
 }
 
 smoothScroll = function(e){
