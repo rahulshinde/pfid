@@ -30,7 +30,7 @@ toggleStatement = function(){
   if (window.width >= 768){
     var time = 1000;
   } else {
-    var time = 1500;
+    var time = 0;
   }
   $('.view_more_container').slideToggle(time);
 
