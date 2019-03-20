@@ -28,11 +28,12 @@ $(document).ready(function(){
 })
 
 toggleStatement = function(){
+  var time;
   $(this).toggleClass('open');
-  if (window.width >= 768){
-    var time = 1000;
+  if (Site.window_width >= 768){
+    time = 1000;
   } else {
-    var time = 0;
+    time = 0;
   }
   $('.view_more_container').slideToggle(time);
 
