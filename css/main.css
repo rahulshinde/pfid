@@ -305,6 +305,7 @@ html {
     #site .curatorial_statement .process_sub_section {
       margin-bottom: 0; }
     #site .curatorial_statement .view_more_toggle.process_sub_section {
+      display: block;
       margin-top: 0.5rem;
       margin-bottom: 0.9rem; }
   #site .section_links {
@@ -890,6 +891,7 @@ html {
     transition: transform ease 0.5s;
     -webkit-transition: transform ease 0.5s; }
   #site #language {
+    margin-top: 0.65rem;
     display: block;
     text-align: left; }
     #site #language .fr {
