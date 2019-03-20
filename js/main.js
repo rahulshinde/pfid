@@ -41,7 +41,7 @@ toggleStatement = function(){
   setTimeout(function(){
     resizeHandler();
     scrollHandler();
-  }, time);
+  }, time + 10);
 }
 
 smoothScroll = function(e){
