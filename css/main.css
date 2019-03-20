@@ -519,7 +519,39 @@ html {
   bottom: 0;
   left: 35%; }
 #site .subsection {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  position: relative; }
+#site .no_caption,
+#site .caption {
+  transition: opacity ease 1s; }
+#site .no_caption {
+  display: block;
+  opacity: 1; }
+#site .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none; }
+#site .caption_version .no_caption {
+  pointer-events: none;
+  opacity: 0; }
+#site .caption_version .caption {
+  opacity: 1;
+  pointer-events: auto; }
+#site .caption_version .cc_toggle:after {
+  content: "CC: On (Click to Toggle)"; }
+#site .cc_toggle {
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 1em; }
+  #site .cc_toggle:after {
+    display: block;
+    content: "CC: Off (Click to Toggle)"; }
+  #site .cc_toggle:hover {
+    cursor: pointer;
+    text-decoration: none; }
 #site .left {
   transform-origin: top left;
   /*text-shadow: 0 0 0.2rem #fff;*/ }
@@ -543,6 +575,10 @@ html {
 #site #arielle_images img {
   width: 100%;
   margin-bottom: 1rem; }
+  #site #arielle_images img.vertical {
+    display: block;
+    margin: 0 0 1rem 50%;
+    width: 50% !important; }
 #site .open #process_toggle .text_wrap {
   opacity: 1; }
   #site .open #process_toggle .text_wrap:before {

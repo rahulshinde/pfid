@@ -19,6 +19,8 @@ $(document).ready(function(){
 
   $('.view_more_toggle').on('click', toggleStatement);
 
+  $('.cc_toggle').on('click', toggleCc);
+
   scrollHandler();
 
   $(window).on('scroll', scrollHandler);
@@ -90,4 +92,8 @@ closeZoomImage = function(e){
 
 transitionTabletSection = function(e){
   $('#site').toggleClass('slide_over');
+}
+
+toggleCc = function(e){
+  $(this).parent().toggleClass('caption_version');
 }
